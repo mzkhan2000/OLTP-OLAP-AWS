@@ -121,7 +121,8 @@ employment_type	VARCHAR(50),
 user_active_status VARCHAR(50),
 user_modified_time DATETIME,
 user_type VARCHAR(50),
-user_label VARCHAR(50)
+user_label VARCHAR(50),
+PRIMARY KEY(user_id)
 );
 
 
@@ -131,7 +132,8 @@ client_id INT,
 city VARCHAR(100),
 postcode VARCHAR(10),
 state VARCHAR(50),
-client_active INT
+client_active INT,
+PRIMARY KEY(client_id)
 );
 
 
@@ -144,7 +146,8 @@ state VARCHAR(50),
 suppliers_active_status VARCHAR(50),
 suppliers_date_added DATETIME,
 suppliers_date_modified DATETIME,
-suppliers_modified_time DATETIME
+suppliers_modified_time DATETIME,
+PRIMARY KEY(suppliers_id)
 );
 ```
 3. Using the COPY commands to load data from S3 buckets to Redshift created database
