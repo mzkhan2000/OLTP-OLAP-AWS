@@ -1,0 +1,43 @@
+[
+  {
+    "Action": {
+      "Operation": "QUARTER",
+      "Parameters": {
+        "functionStepType": "QUARTER",
+        "sourceColumn": "start_date",
+        "targetColumn": "calander_quarter",
+        "units": "quarter"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "FORMAT_DATE",
+      "Parameters": {
+        "sourceColumn": "start_date",
+        "targetDateFormat": "yyyy-mm-dd"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "FORMAT_DATE",
+      "Parameters": {
+        "sourceColumn": "end_date",
+        "targetDateFormat": "yyyy-mm-dd"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "DATE_DIFF",
+      "Parameters": {
+        "functionStepType": "DATE_DIFF",
+        "sourceColumn1": "start_date",
+        "sourceColumn2": "end_date",
+        "targetColumn": "DATEDIFF_order_duration",
+        "units": "DAYS"
+      }
+    }
+  }
+]
