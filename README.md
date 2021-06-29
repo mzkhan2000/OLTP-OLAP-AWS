@@ -79,7 +79,7 @@ AWS Glue ETL Job for creating Dimention tables and updating schemas  [GlueJob02C
 ```sql
 CREATE TABLE assignar_olap_db.fact_order-project 
 (
-order_id INT,
+order_id INT NOT NULL,
 client_id BIGINT,
 project_id BIGINT,
 suppeliers_id INT,
@@ -113,7 +113,7 @@ FOREIGN KEY(suppeliers_id) REFERENCES dimention_suppliers(suppliers_id),
 
 CREATE TABLE assignar_olap_db.dimention_user 
 (
-user_id	INT,
+user_id	INT NOT NULL,
 suburb VARCHAR(100),
 state VARCHAR(50),
 postcode VARCHAR(10),
@@ -128,7 +128,7 @@ PRIMARY KEY(user_id)
 
 CREATE TABLE assignar_olap_db.dimention_client 
 (
-client_id INT,
+client_id INT NOT NULL,
 city VARCHAR(100),
 postcode VARCHAR(10),
 state VARCHAR(50),
@@ -139,7 +139,7 @@ PRIMARY KEY(client_id)
 
 CREATE TABLE assignar_olap_db.dimention_suppliers
 (
-suppliers_id	INT,
+suppliers_id INT NOT NULL,
 city VARCHAR(100),
 postcode VARCHAR(10),
 state VARCHAR(50),
