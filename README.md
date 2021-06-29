@@ -109,6 +109,43 @@ FOREIGN KEY(client_id) REFERENCES dimention_client(client_id),
 FOREIGN KEY(user_id) REFERENCES dimention_user(user_id),
 FOREIGN KEY(suppeliers_id) REFERENCES dimention_suppliers(suppliers_id),
   );
+
+
+CREATE TABLE assignar_olap_db.dimention_user 
+(
+user_id	INT,
+suburb VARCHAR(100),
+state VARCHAR(50),
+postcode VARCHAR(10),
+employment_type	VARCHAR(50),
+user_active_status VARCHAR(50),
+user_modified_time DATETIME,
+user_type VARCHAR(50),
+user_label VARCHAR(50)
+);
+
+
+CREATE TABLE assignar_olap_db.dimention_client 
+(
+client_id INT,
+city VARCHAR(100),
+postcode VARCHAR(10),
+state VARCHAR(50),
+client_active INT
+);
+
+
+CREATE TABLE assignar_olap_db.dimention_suppliers
+(
+suppliers_id	INT,
+city VARCHAR(100),
+postcode VARCHAR(10),
+state VARCHAR(50),
+suppliers_active_status VARCHAR(50),
+suppliers_date_added DATETIME,
+suppliers_date_modified DATETIME,
+suppliers_modified_time DATETIME
+);
 ```
 3. Using the COPY commands to load data from S3 buckets to Redshift created database
 
