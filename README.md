@@ -159,11 +159,4 @@ from
 ) group by client_id
  ```
 
-# Q5. How would you design the load scripts if the frequency of processing changed from batch to real time? 
 
-Batch processing is a common practice for data processing. In a batch architecture, a scheduled extract-transform-load (ETL) process is executed that processes the transactions and transforms them so they can be loaded into their data warehouse. Depends on the business analysts review the data using a reporting tool, the ETL process can be scheduled daily, weekly, or maybe monthly. In AWS cloud environment, Glue jobs can be configured based on the schedules, and AWS lambda function can be created. 
-
-If the frequency of processing changed from batch to real time, and if the organization uses AWS for their data analytics solution, then the streaming data solution with Amazon Kinesis would be a suitable solution, I think. Amazon Kinesis Data Firehose is a good way to load streaming data into AWS. It can capture, transform, and load streaming data into Amazon Kinesis Data Analytics, Amazon S3 and Amazon Redshift. In this solution, Amazon Kinesis Data Firehose first delivers incoming data to your S3 bucket. If data transformation needed AWS Lambda function can be created that enable streaming data transformations in Kinesis Data Firehose. Kinesis Firehose then issues an Amazon Redshift COPY command to load the data from your S3 bucket to your Amazon Redshift cluster. This is a one suitable solution from many of other solutions in AWS real-time data pipeline.
-
-# Q6. How and what kind of monitoring systems would you set up to make sure the data is correct, accurate and available in a timely manner.? 
-Aws lambda function that can receive notifications from amazon sns can be set up to make sure the data is correct, accurate and available in a timely manner
